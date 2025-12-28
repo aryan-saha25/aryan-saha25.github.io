@@ -37,8 +37,8 @@
     /* ===== SLIDER WRAPPER ===== */
     .slider-wrapper {
       position: relative;
-      max-width: 700px; /* 👈 reduced size */
-      margin: 0 auto 70px; /* centered */
+      max-width: 780px;
+      margin: 0 auto 80px;
     }
 
     /* ===== SLIDER ===== */
@@ -114,13 +114,13 @@
       product problems across fintech, mobility, healthcare, and consumer domains.
     </p>
 
+    <!-- ================= BATTERY SMART ================= -->
     <h2>Reducing Wait Time in EV Battery Swapping (Battery Smart)</h2>
     <p class="desc">
       Product case focused on reducing driver wait time during peak hours through
       traffic distribution and battery availability improvements.
     </p>
 
-    <!-- ===== BATTERY SMART SLIDER ===== -->
     <div class="slider-wrapper">
       <button class="nav left" onclick="prevSlide('battery')">&#10094;</button>
       <button class="nav right" onclick="nextSlide('battery')">&#10095;</button>
@@ -141,14 +141,100 @@
       <div class="counter" id="battery-counter">1 / 8</div>
     </div>
 
+    <!-- ================= HILABS ================= -->
+    <h2>Network Adequacy & Data Accuracy Platform (HiLabs)</h2>
+    <p class="desc">
+      B2B SaaS product case addressing healthcare compliance using geospatial analysis
+      and automation.
+    </p>
+
+    <div class="slider-wrapper">
+      <button class="nav left" onclick="prevSlide('hilabs')">&#10094;</button>
+      <button class="nav right" onclick="nextSlide('hilabs')">&#10095;</button>
+
+      <div class="slider">
+        <div class="slides" id="hilabs-slides">
+          <img src="hilabs/1.jpg">
+          <img src="hilabs/2.jpg">
+          <img src="hilabs/3.jpg">
+          <img src="hilabs/4.jpg">
+          <img src="hilabs/5.jpg">
+          <img src="hilabs/6.jpg">
+          <img src="hilabs/7.jpg">
+          <img src="hilabs/8.jpg">
+        </div>
+      </div>
+
+      <div class="counter" id="hilabs-counter">1 / 8</div>
+    </div>
+
+    <!-- ================= TATA 1MG ================= -->
+    <h2>Social Product to Solve Urban Loneliness (TATA 1mg)</h2>
+    <p class="desc">
+      Consumer product case focused on user research, MVP prioritization,
+      and go-to-market strategy.
+    </p>
+
+    <div class="slider-wrapper">
+      <button class="nav left" onclick="prevSlide('tata')">&#10094;</button>
+      <button class="nav right" onclick="nextSlide('tata')">&#10095;</button>
+
+      <div class="slider">
+        <div class="slides" id="tata-slides">
+          <img src="tata-1mg/1.jpg">
+          <img src="tata-1mg/2.jpg">
+          <img src="tata-1mg/3.jpg">
+          <img src="tata-1mg/4.jpg">
+          <img src="tata-1mg/5.jpg">
+          <img src="tata-1mg/6.jpg">
+          <img src="tata-1mg/7.jpg">
+          <img src="tata-1mg/8.jpg">
+        </div>
+      </div>
+
+      <div class="counter" id="tata-counter">1 / 8</div>
+    </div>
+
+    <!-- ================= FLIPKART ================= -->
+    <h2>Global Superstar Discovery Platform (Flipkart)</h2>
+    <p class="desc">
+      Strategy-led product case covering market sizing, monetization,
+      and scalable growth.
+    </p>
+
+    <div class="slider-wrapper">
+      <button class="nav left" onclick="prevSlide('flipkart')">&#10094;</button>
+      <button class="nav right" onclick="nextSlide('flipkart')">&#10095;</button>
+
+      <div class="slider">
+        <div class="slides" id="flipkart-slides">
+          <img src="flipkart/1.jpg">
+          <img src="flipkart/2.jpg">
+          <img src="flipkart/3.jpg">
+          <img src="flipkart/4.jpg">
+          <img src="flipkart/5.jpg">
+          <img src="flipkart/6.jpg">
+          <img src="flipkart/7.jpg">
+          <img src="flipkart/8.jpg">
+        </div>
+      </div>
+
+      <div class="counter" id="flipkart-counter">1 / 8</div>
+    </div>
+
     <footer>
       Contact: aryansaha2509@gmail.com <br />
-      LinkedIn: https://www.linkedin.com/in/aryan-saha-231b33223/
+      LinkedIn: add-your-link-here
     </footer>
   </div>
 
   <script>
-    const slideIndex = { battery: 0 };
+    const slideIndex = {
+      battery: 0,
+      hilabs: 0,
+      tata: 0,
+      flipkart: 0
+    };
 
     function updateCounter(id) {
       const slides = document.getElementById(id + "-slides");
@@ -174,7 +260,12 @@
       updateCounter(id);
     }
 
-    window.onload = () => updateCounter('battery');
+    window.onload = () => {
+      updateCounter('battery');
+      updateCounter('hilabs');
+      updateCounter('tata');
+      updateCounter('flipkart');
+    };
   </script>
 </body>
 </html>
