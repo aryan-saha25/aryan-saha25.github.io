@@ -4,6 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Aryan Saha | Product Portfolio</title>
+
   <style>
     body {
       font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
@@ -12,48 +13,79 @@
       color: #222;
       line-height: 1.6;
     }
+
     .container {
       max-width: 900px;
       margin: auto;
       padding: 40px 20px;
     }
+
     h1 {
       margin-bottom: 4px;
     }
-    h2 {
-      margin-top: 48px;
-    }
+
     .subtitle {
       color: #555;
-      margin-bottom: 24px;
+      margin-bottom: 32px;
     }
+
     .desc {
       color: #444;
-      margin-top: 8px;
+      margin-bottom: 16px;
     }
-    embed {
+
+    /* Slider styles */
+    .slider {
+      position: relative;
       width: 100%;
-      height: 700px;
+      max-width: 900px;
+      overflow: hidden;
       border: 1px solid #ddd;
-      border-radius: 6px;
-      background: white;
-      margin-top: 12px;
+      border-radius: 8px;
+      background: #fff;
+      margin-bottom: 60px;
     }
-    .pdf-link {
-      margin-top: 6px;
-      font-size: 14px;
+
+    .slides {
+      display: flex;
+      transition: transform 0.4s ease-in-out;
     }
+
+    .slides img {
+      width: 100%;
+      flex-shrink: 0;
+    }
+
+    .nav {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background: rgba(0, 0, 0, 0.6);
+      color: white;
+      border: none;
+      font-size: 22px;
+      padding: 10px 14px;
+      cursor: pointer;
+      border-radius: 50%;
+      z-index: 2;
+    }
+
+    .nav.left {
+      left: 10px;
+    }
+
+    .nav.right {
+      right: 10px;
+    }
+
     footer {
       margin-top: 60px;
-      color: #666;
       font-size: 14px;
-    }
-    a {
-      color: #0066cc;
-      text-decoration: none;
+      color: #666;
     }
   </style>
 </head>
+
 <body>
   <div class="container">
     <h1>Aryan Saha</h1>
@@ -66,52 +98,53 @@
       product problems across fintech, mobility, healthcare, and consumer domains.
     </p>
 
-    <!-- Case Study 1 -->
     <h2>Reducing Wait Time in EV Battery Swapping (Battery Smart)</h2>
     <p class="desc">
       Product case focused on reducing driver wait time during peak hours through
       traffic distribution and battery availability improvements.
     </p>
-    <embed src="battery-smart.pdf" type="application/pdf">
-    <div class="pdf-link">
-      <a href="battery-smart.pdf" target="_blank">Open PDF in new tab</a>
-    </div>
 
-    <!-- Case Study 2 -->
-    <h2>Network Adequacy & Data Accuracy Platform (HiLabs)</h2>
-    <p class="desc">
-      B2B SaaS product case addressing healthcare compliance using geospatial analysis
-      and automation.
-    </p>
-    <embed src="hilabs.pdf" type="application/pdf">
-    <div class="pdf-link">
-      <a href="hilabs.pdf" target="_blank">Open PDF in new tab</a>
-    </div>
+    <!-- Battery Smart Slider -->
+    <div class="slider">
+      <button class="nav left" onclick="prevSlide('battery')">&#10094;</button>
 
-    <!-- Case Study 3 -->
-    <h2>Social Product to Solve Urban Loneliness (TATA 1mg)</h2>
-    <p class="desc">
-      Consumer product case focused on user research, MVP prioritization, and GTM strategy.
-    </p>
-    <embed src="tata-1mg.pdf" type="application/pdf">
-    <div class="pdf-link">
-      <a href="tata-1mg.pdf" target="_blank">Open PDF in new tab</a>
-    </div>
+      <div class="slides" id="battery-slides">
+        <img src="battery-smart/Battery_Smart-1.jpg">
+        <img src="battery-smart/Battery_Smart-2.jpg">
+        <img src="battery-smart/Battery_Smart-3.jpg">
+        <img src="battery-smart/Battery_Smart-4.jpg">
+        <img src="battery-smart/Battery_Smart-5.jpg">
+        <img src="battery-smart/Battery_Smart-6.jpg">
+        <img src="battery-smart/Battery_Smart-7.jpg">
+        <img src="battery-smart/Battery_Smart-8.jpg">
+      </div>
 
-    <!-- Case Study 4 -->
-    <h2>Global Superstar Discovery Platform (Flipkart)</h2>
-    <p class="desc">
-      Strategy-led case covering market sizing, monetization, and scalable growth.
-    </p>
-    <embed src="flipkart.pdf" type="application/pdf">
-    <div class="pdf-link">
-      <a href="flipkart.pdf" target="_blank">Open PDF in new tab</a>
+      <button class="nav right" onclick="nextSlide('battery')">&#10095;</button>
     </div>
 
     <footer>
-      Contact: aryansaha2509@gmail.com<br />
+      Contact: aryansaha2509@gmail.com <br />
       LinkedIn: add-your-link-here
     </footer>
   </div>
+
+  <script>
+    const slideIndex = { battery: 0 };
+
+    function nextSlide(id) {
+      const slides = document.getElementById(id + "-slides");
+      const total = slides.children.length;
+      slideIndex[id] = (slideIndex[id] + 1) % total;
+      slides.style.transform = `translateX(-${slideIndex[id] * 100}%)`;
+    }
+
+    function prevSlide(id) {
+      const slides = document.getElementById(id + "-slides");
+      const total = slides.children.length;
+      slideIndex[id] =
+        (slideIndex[id] - 1 + total) % total;
+      slides.style.transform = `translateX(-${slideIndex[id] * 100}%)`;
+    }
+  </script>
 </body>
 </html>
