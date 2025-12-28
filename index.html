@@ -21,12 +21,28 @@
     }
 
     h1 {
-      margin-bottom: 4px;
+      margin-bottom: 6px;
     }
 
     .subtitle {
       color: #555;
-      margin-bottom: 32px;
+      margin-bottom: 10px;
+    }
+
+    .contact-icons {
+      display: flex;
+      gap: 16px;
+      margin-bottom: 30px;
+      font-size: 20px;
+    }
+
+    .contact-icons a {
+      text-decoration: none;
+      color: #222;
+    }
+
+    .contact-icons a:hover {
+      opacity: 0.7;
     }
 
     .desc {
@@ -37,7 +53,7 @@
     /* ===== SLIDER WRAPPER ===== */
     .slider-wrapper {
       position: relative;
-      max-width: 700px; /* FINAL SIZE */
+      max-width: 700px;
       margin: 0 auto 80px;
     }
 
@@ -77,13 +93,8 @@
       box-shadow: 0 2px 6px rgba(0,0,0,0.15);
     }
 
-    .nav.left {
-      left: -55px;
-    }
-
-    .nav.right {
-      right: -55px;
-    }
+    .nav.left { left: -55px; }
+    .nav.right { right: -55px; }
 
     /* ===== COUNTER ===== */
     .counter {
@@ -92,21 +103,6 @@
       right: 0;
       font-size: 14px;
       color: #555;
-    }
-
-    footer {
-      margin-top: 60px;
-      font-size: 14px;
-      color: #666;
-    }
-
-    footer a {
-      color: #0a66c2;
-      text-decoration: none;
-    }
-
-    footer a:hover {
-      text-decoration: underline;
     }
   </style>
 </head>
@@ -118,16 +114,25 @@
       Associate Product Manager @ CIFDAQ | B.Tech, IIT Delhi (2025)
     </div>
 
+    <!-- ===== CONTACT ICONS ===== -->
+    <div class="contact-icons">
+      <a href="mailto:aryansaha2509@gmail.com" title="Email">📧</a>
+      <a href="tel:+917052993410" title="Phone">📞</a>
+      <a href="https://www.linkedin.com/in/aryan-saha-231b33223/" target="_blank" title="LinkedIn">🔗</a>
+    </div>
+
     <p>
       Associate Product Manager with experience working on structured and ambiguous
       product problems across fintech, mobility, healthcare, and consumer domains.
     </p>
 
+    <h2>Product Case Decks</h2>
+
     <!-- ================= FLIPKART ================= -->
-    <h2>Global Superstar Discovery Platform (Flipkart)</h2>
+    <h3>1. Global Superstar Discovery Platform (Flipkart)</h3>
     <p class="desc">
-      Strategy-led product case covering market sizing, monetization,
-      and scalable growth.
+      <strong>Problem:</strong> India lacks a structured pathway to discover and launch global music superstars despite massive creator potential.<br>
+      <strong>Approach:</strong> Designed an end-to-end platform strategy covering discovery, artist development, monetization, and growth loops.
     </p>
 
     <div class="slider-wrapper">
@@ -136,14 +141,9 @@
 
       <div class="slider">
         <div class="slides" id="flipkart-slides">
-          <img src="flipkart/1.jpg">
-          <img src="flipkart/2.jpg">
-          <img src="flipkart/3.jpg">
-          <img src="flipkart/4.jpg">
-          <img src="flipkart/5.jpg">
-          <img src="flipkart/6.jpg">
-          <img src="flipkart/7.jpg">
-          <img src="flipkart/8.jpg">
+          <img src="flipkart/1.jpg"><img src="flipkart/2.jpg"><img src="flipkart/3.jpg">
+          <img src="flipkart/4.jpg"><img src="flipkart/5.jpg"><img src="flipkart/6.jpg">
+          <img src="flipkart/7.jpg"><img src="flipkart/8.jpg">
         </div>
       </div>
 
@@ -151,10 +151,10 @@
     </div>
 
     <!-- ================= BATTERY SMART ================= -->
-    <h2>Reducing Wait Time in EV Battery Swapping (Battery Smart)</h2>
+    <h3>2. Reducing EV Battery Swap Wait Time (Battery Smart)</h3>
     <p class="desc">
-      Product case focused on reducing driver wait time during peak hours through
-      traffic distribution and battery availability improvements.
+      <strong>Problem:</strong> EV drivers face long wait times during peak hours, reducing income and system efficiency.<br>
+      <strong>Approach:</strong> Broke wait time into queue, process, and availability; proposed real-time visibility and proactive redistribution.
     </p>
 
     <div class="slider-wrapper">
@@ -163,14 +163,10 @@
 
       <div class="slider">
         <div class="slides" id="battery-slides">
-          <img src="battery-smart/Battery_Smart-1.jpg">
-          <img src="battery-smart/Battery_Smart-2.jpg">
-          <img src="battery-smart/Battery_Smart-3.jpg">
-          <img src="battery-smart/Battery_Smart-4.jpg">
-          <img src="battery-smart/Battery_Smart-5.jpg">
-          <img src="battery-smart/Battery_Smart-6.jpg">
-          <img src="battery-smart/Battery_Smart-7.jpg">
-          <img src="battery-smart/Battery_Smart-8.jpg">
+          <img src="battery-smart/Battery_Smart-1.jpg"><img src="battery-smart/Battery_Smart-2.jpg">
+          <img src="battery-smart/Battery_Smart-3.jpg"><img src="battery-smart/Battery_Smart-4.jpg">
+          <img src="battery-smart/Battery_Smart-5.jpg"><img src="battery-smart/Battery_Smart-6.jpg">
+          <img src="battery-smart/Battery_Smart-7.jpg"><img src="battery-smart/Battery_Smart-8.jpg">
         </div>
       </div>
 
@@ -178,10 +174,10 @@
     </div>
 
     <!-- ================= TATA 1MG ================= -->
-    <h2>Social Product to Solve Urban Loneliness (TATA 1mg)</h2>
+    <h3>3. Solving Urban Loneliness Through a Social Product (TATA 1mg)</h3>
     <p class="desc">
-      Consumer product case focused on user research, MVP prioritization,
-      and go-to-market strategy.
+      <strong>Problem:</strong> Remote work has increased loneliness among young urban professionals.<br>
+      <strong>Approach:</strong> Built a social product using user research, personas, MVP prioritization, and GTM planning.
     </p>
 
     <div class="slider-wrapper">
@@ -190,14 +186,9 @@
 
       <div class="slider">
         <div class="slides" id="tata-slides">
-          <img src="tata-1mg/1.jpg">
-          <img src="tata-1mg/2.jpg">
-          <img src="tata-1mg/3.jpg">
-          <img src="tata-1mg/4.jpg">
-          <img src="tata-1mg/5.jpg">
-          <img src="tata-1mg/6.jpg">
-          <img src="tata-1mg/7.jpg">
-          <img src="tata-1mg/8.jpg">
+          <img src="tata-1mg/1.jpg"><img src="tata-1mg/2.jpg"><img src="tata-1mg/3.jpg">
+          <img src="tata-1mg/4.jpg"><img src="tata-1mg/5.jpg"><img src="tata-1mg/6.jpg">
+          <img src="tata-1mg/7.jpg"><img src="tata-1mg/8.jpg">
         </div>
       </div>
 
@@ -205,10 +196,10 @@
     </div>
 
     <!-- ================= HILABS ================= -->
-    <h2>Network Adequacy & Data Accuracy Platform (HiLabs)</h2>
+    <h3>4. Healthcare Network Adequacy & Data Accuracy Platform (HiLabs)</h3>
     <p class="desc">
-      B2B SaaS product case addressing healthcare compliance using geospatial analysis
-      and automation.
+      <strong>Problem:</strong> Healthcare payers struggle with inaccurate provider data and compliance risk.<br>
+      <strong>Approach:</strong> Designed a B2B SaaS workflow using automation, analytics, and geospatial intelligence.
     </p>
 
     <div class="slider-wrapper">
@@ -217,59 +208,35 @@
 
       <div class="slider">
         <div class="slides" id="hilabs-slides">
-          <img src="hilabs/1.jpg">
-          <img src="hilabs/2.jpg">
-          <img src="hilabs/3.jpg">
-          <img src="hilabs/4.jpg">
-          <img src="hilabs/5.jpg">
-          <img src="hilabs/6.jpg">
-          <img src="hilabs/7.jpg">
-          <img src="hilabs/8.jpg">
+          <img src="hilabs/1.jpg"><img src="hilabs/2.jpg"><img src="hilabs/3.jpg">
+          <img src="hilabs/4.jpg"><img src="hilabs/5.jpg"><img src="hilabs/6.jpg">
+          <img src="hilabs/7.jpg"><img src="hilabs/8.jpg">
         </div>
       </div>
 
       <div class="counter" id="hilabs-counter">1 / 8</div>
     </div>
-
-    <footer>
-      Contact:
-      <a href="mailto:aryansaha2509@gmail.com">aryansaha2509@gmail.com</a>
-      <br />
-      LinkedIn:
-      <a href="https://www.linkedin.com/in/aryan-saha-231b33223/" target="_blank">
-        linkedin.com/in/aryan-saha-231b33223
-      </a>
-    </footer>
   </div>
 
   <script>
-    const slideIndex = {
-      flipkart: 0,
-      battery: 0,
-      tata: 0,
-      hilabs: 0
-    };
+    const slideIndex = { flipkart:0, battery:0, tata:0, hilabs:0 };
 
     function updateCounter(id) {
       const slides = document.getElementById(id + "-slides");
       const counter = document.getElementById(id + "-counter");
-      const total = slides.children.length;
-      counter.innerText = `${slideIndex[id] + 1} / ${total}`;
+      counter.innerText = `${slideIndex[id] + 1} / ${slides.children.length}`;
     }
 
     function nextSlide(id) {
       const slides = document.getElementById(id + "-slides");
-      const total = slides.children.length;
-      slideIndex[id] = (slideIndex[id] + 1) % total;
+      slideIndex[id] = (slideIndex[id] + 1) % slides.children.length;
       slides.style.transform = `translateX(-${slideIndex[id] * 100}%)`;
       updateCounter(id);
     }
 
     function prevSlide(id) {
       const slides = document.getElementById(id + "-slides");
-      const total = slides.children.length;
-      slideIndex[id] =
-        (slideIndex[id] - 1 + total) % total;
+      slideIndex[id] = (slideIndex[id] - 1 + slides.children.length) % slides.children.length;
       slides.style.transform = `translateX(-${slideIndex[id] * 100}%)`;
       updateCounter(id);
     }
