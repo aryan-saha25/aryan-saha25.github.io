@@ -31,13 +31,13 @@
 
     .desc {
       color: #444;
-      margin-bottom: 16px;
+      margin-bottom: 12px;
     }
 
     /* ===== SLIDER WRAPPER ===== */
     .slider-wrapper {
       position: relative;
-      max-width: 780px;
+      max-width: 700px; /* FINAL SIZE */
       margin: 0 auto 80px;
     }
 
@@ -61,7 +61,7 @@
       flex-shrink: 0;
     }
 
-    /* ===== ARROWS (OUTSIDE IMAGE) ===== */
+    /* ===== ARROWS ===== */
     .nav {
       position: absolute;
       top: 50%;
@@ -85,7 +85,7 @@
       right: -55px;
     }
 
-    /* ===== COUNTER (OUTSIDE IMAGE) ===== */
+    /* ===== COUNTER ===== */
     .counter {
       position: absolute;
       bottom: -28px;
@@ -98,6 +98,15 @@
       margin-top: 60px;
       font-size: 14px;
       color: #666;
+    }
+
+    footer a {
+      color: #0a66c2;
+      text-decoration: none;
+    }
+
+    footer a:hover {
+      text-decoration: underline;
     }
   </style>
 </head>
@@ -113,6 +122,33 @@
       Associate Product Manager with experience working on structured and ambiguous
       product problems across fintech, mobility, healthcare, and consumer domains.
     </p>
+
+    <!-- ================= FLIPKART ================= -->
+    <h2>Global Superstar Discovery Platform (Flipkart)</h2>
+    <p class="desc">
+      Strategy-led product case covering market sizing, monetization,
+      and scalable growth.
+    </p>
+
+    <div class="slider-wrapper">
+      <button class="nav left" onclick="prevSlide('flipkart')">&#10094;</button>
+      <button class="nav right" onclick="nextSlide('flipkart')">&#10095;</button>
+
+      <div class="slider">
+        <div class="slides" id="flipkart-slides">
+          <img src="flipkart/1.jpg">
+          <img src="flipkart/2.jpg">
+          <img src="flipkart/3.jpg">
+          <img src="flipkart/4.jpg">
+          <img src="flipkart/5.jpg">
+          <img src="flipkart/6.jpg">
+          <img src="flipkart/7.jpg">
+          <img src="flipkart/8.jpg">
+        </div>
+      </div>
+
+      <div class="counter" id="flipkart-counter">1 / 8</div>
+    </div>
 
     <!-- ================= BATTERY SMART ================= -->
     <h2>Reducing Wait Time in EV Battery Swapping (Battery Smart)</h2>
@@ -139,33 +175,6 @@
       </div>
 
       <div class="counter" id="battery-counter">1 / 8</div>
-    </div>
-
-    <!-- ================= HILABS ================= -->
-    <h2>Network Adequacy & Data Accuracy Platform (HiLabs)</h2>
-    <p class="desc">
-      B2B SaaS product case addressing healthcare compliance using geospatial analysis
-      and automation.
-    </p>
-
-    <div class="slider-wrapper">
-      <button class="nav left" onclick="prevSlide('hilabs')">&#10094;</button>
-      <button class="nav right" onclick="nextSlide('hilabs')">&#10095;</button>
-
-      <div class="slider">
-        <div class="slides" id="hilabs-slides">
-          <img src="hilabs/1.jpg">
-          <img src="hilabs/2.jpg">
-          <img src="hilabs/3.jpg">
-          <img src="hilabs/4.jpg">
-          <img src="hilabs/5.jpg">
-          <img src="hilabs/6.jpg">
-          <img src="hilabs/7.jpg">
-          <img src="hilabs/8.jpg">
-        </div>
-      </div>
-
-      <div class="counter" id="hilabs-counter">1 / 8</div>
     </div>
 
     <!-- ================= TATA 1MG ================= -->
@@ -195,45 +204,50 @@
       <div class="counter" id="tata-counter">1 / 8</div>
     </div>
 
-    <!-- ================= FLIPKART ================= -->
-    <h2>Global Superstar Discovery Platform (Flipkart)</h2>
+    <!-- ================= HILABS ================= -->
+    <h2>Network Adequacy & Data Accuracy Platform (HiLabs)</h2>
     <p class="desc">
-      Strategy-led product case covering market sizing, monetization,
-      and scalable growth.
+      B2B SaaS product case addressing healthcare compliance using geospatial analysis
+      and automation.
     </p>
 
     <div class="slider-wrapper">
-      <button class="nav left" onclick="prevSlide('flipkart')">&#10094;</button>
-      <button class="nav right" onclick="nextSlide('flipkart')">&#10095;</button>
+      <button class="nav left" onclick="prevSlide('hilabs')">&#10094;</button>
+      <button class="nav right" onclick="nextSlide('hilabs')">&#10095;</button>
 
       <div class="slider">
-        <div class="slides" id="flipkart-slides">
-          <img src="flipkart/1.jpg">
-          <img src="flipkart/2.jpg">
-          <img src="flipkart/3.jpg">
-          <img src="flipkart/4.jpg">
-          <img src="flipkart/5.jpg">
-          <img src="flipkart/6.jpg">
-          <img src="flipkart/7.jpg">
-          <img src="flipkart/8.jpg">
+        <div class="slides" id="hilabs-slides">
+          <img src="hilabs/1.jpg">
+          <img src="hilabs/2.jpg">
+          <img src="hilabs/3.jpg">
+          <img src="hilabs/4.jpg">
+          <img src="hilabs/5.jpg">
+          <img src="hilabs/6.jpg">
+          <img src="hilabs/7.jpg">
+          <img src="hilabs/8.jpg">
         </div>
       </div>
 
-      <div class="counter" id="flipkart-counter">1 / 8</div>
+      <div class="counter" id="hilabs-counter">1 / 8</div>
     </div>
 
     <footer>
-      Contact: aryansaha2509@gmail.com <br />
-      LinkedIn: add-your-link-here
+      Contact:
+      <a href="mailto:aryansaha2509@gmail.com">aryansaha2509@gmail.com</a>
+      <br />
+      LinkedIn:
+      <a href="https://www.linkedin.com/in/aryan-saha-231b33223/" target="_blank">
+        linkedin.com/in/aryan-saha-231b33223
+      </a>
     </footer>
   </div>
 
   <script>
     const slideIndex = {
+      flipkart: 0,
       battery: 0,
-      hilabs: 0,
       tata: 0,
-      flipkart: 0
+      hilabs: 0
     };
 
     function updateCounter(id) {
@@ -261,10 +275,10 @@
     }
 
     window.onload = () => {
-      updateCounter('battery');
-      updateCounter('hilabs');
-      updateCounter('tata');
       updateCounter('flipkart');
+      updateCounter('battery');
+      updateCounter('tata');
+      updateCounter('hilabs');
     };
   </script>
 </body>
