@@ -34,16 +34,21 @@
       margin-bottom: 16px;
     }
 
-    /* Slider styles */
+    /* ===== SLIDER WRAPPER ===== */
+    .slider-wrapper {
+      position: relative;
+      max-width: 780px; /* 👈 reduced size */
+      margin: 0 auto 70px; /* centered */
+    }
+
+    /* ===== SLIDER ===== */
     .slider {
       position: relative;
       width: 100%;
-      max-width: 900px;
       overflow: hidden;
       border: 1px solid #ddd;
       border-radius: 8px;
       background: #fff;
-      margin-bottom: 60px;
     }
 
     .slides {
@@ -56,26 +61,37 @@
       flex-shrink: 0;
     }
 
+    /* ===== ARROWS (OUTSIDE IMAGE) ===== */
     .nav {
       position: absolute;
       top: 50%;
       transform: translateY(-50%);
-      background: rgba(0, 0, 0, 0.6);
-      color: white;
-      border: none;
+      background: #ffffff;
+      color: #333;
+      border: 1px solid #ddd;
       font-size: 22px;
       padding: 10px 14px;
       cursor: pointer;
       border-radius: 50%;
-      z-index: 2;
+      z-index: 3;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.15);
     }
 
     .nav.left {
-      left: 10px;
+      left: -55px;
     }
 
     .nav.right {
-      right: 10px;
+      right: -55px;
+    }
+
+    /* ===== COUNTER (OUTSIDE IMAGE) ===== */
+    .counter {
+      position: absolute;
+      bottom: -28px;
+      right: 0;
+      font-size: 14px;
+      color: #555;
     }
 
     footer {
@@ -104,22 +120,25 @@
       traffic distribution and battery availability improvements.
     </p>
 
-    <!-- Battery Smart Slider -->
-    <div class="slider">
+    <!-- ===== BATTERY SMART SLIDER ===== -->
+    <div class="slider-wrapper">
       <button class="nav left" onclick="prevSlide('battery')">&#10094;</button>
+      <button class="nav right" onclick="nextSlide('battery')">&#10095;</button>
 
-      <div class="slides" id="battery-slides">
-        <img src="battery-smart/Battery_Smart-1.jpg">
-        <img src="battery-smart/Battery_Smart-2.jpg">
-        <img src="battery-smart/Battery_Smart-3.jpg">
-        <img src="battery-smart/Battery_Smart-4.jpg">
-        <img src="battery-smart/Battery_Smart-5.jpg">
-        <img src="battery-smart/Battery_Smart-6.jpg">
-        <img src="battery-smart/Battery_Smart-7.jpg">
-        <img src="battery-smart/Battery_Smart-8.jpg">
+      <div class="slider">
+        <div class="slides" id="battery-slides">
+          <img src="battery-smart/Battery_Smart-1.jpg">
+          <img src="battery-smart/Battery_Smart-2.jpg">
+          <img src="battery-smart/Battery_Smart-3.jpg">
+          <img src="battery-smart/Battery_Smart-4.jpg">
+          <img src="battery-smart/Battery_Smart-5.jpg">
+          <img src="battery-smart/Battery_Smart-6.jpg">
+          <img src="battery-smart/Battery_Smart-7.jpg">
+          <img src="battery-smart/Battery_Smart-8.jpg">
+        </div>
       </div>
 
-      <button class="nav right" onclick="nextSlide('battery')">&#10095;</button>
+      <div class="counter" id="battery-counter">1 / 8</div>
     </div>
 
     <footer>
@@ -131,11 +150,19 @@
   <script>
     const slideIndex = { battery: 0 };
 
+    function updateCounter(id) {
+      const slides = document.getElementById(id + "-slides");
+      const counter = document.getElementById(id + "-counter");
+      const total = slides.children.length;
+      counter.innerText = `${slideIndex[id] + 1} / ${total}`;
+    }
+
     function nextSlide(id) {
       const slides = document.getElementById(id + "-slides");
       const total = slides.children.length;
       slideIndex[id] = (slideIndex[id] + 1) % total;
       slides.style.transform = `translateX(-${slideIndex[id] * 100}%)`;
+      updateCounter(id);
     }
 
     function prevSlide(id) {
@@ -144,7 +171,10 @@
       slideIndex[id] =
         (slideIndex[id] - 1 + total) % total;
       slides.style.transform = `translateX(-${slideIndex[id] * 100}%)`;
+      updateCounter(id);
     }
+
+    window.onload = () => updateCounter('battery');
   </script>
 </body>
 </html>
